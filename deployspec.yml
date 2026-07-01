@@ -1,0 +1,28 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo "Starting Continuous Deployment to AWS Lambda..."
+      
+      # Deploy Earthquake ETL
+      - cd lambdas/earthquake_etl
+      - zip function.zip lambda_function.py
+      - aws lambda update-function-code --function-name EarthquakeETL --zip-file fileb://function.zip
+      - cd ../..
+      
+      # Deploy Weather ETL
+      - cd lambdas/weather_etl
+      - zip function.zip lambda_function.py
+      - aws lambda update-function-code --function-name WeatherETL --zip-file fileb://function.zip
+      - cd ../..
+      
+      # Deploy Products ETL
+      - cd lambdas/products_etl
+      - zip function.zip lambda_function.py
+      - aws lambda update-function-code --function-name ProductETL --zip-file fileb://function.zip
+      - cd ../..
+      
+  post_build:
+    commands:
+      - echo "Deployment Complete! New code is live."
