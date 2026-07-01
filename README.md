@@ -31,3 +31,12 @@ These keys were chosen because they provide high cardinality, ensuring data is e
 * **Data Cleansing (Weather):** Rejects any JSON payload that is missing both temperature and windspeed metrics.
 * **Derived Fields (Weather):** Created a `wind_status` field, tagging the entry as an "ADVISORY" if wind speeds exceed 15.0 km/h.
 * **Transformations (Products):** Extracted the `price` and `discountPercentage`, and applied math to calculate a brand new `sale_price` derived field before pushing to the database.
+
+# Project Evidence
+
+- **01_lambda_functions.png**: Confirms creation of serverless compute resources.
+- **02_dynamodb_tables.png**: Confirms the storage schema and table existence.
+- **03_s3_bucket.png**: Confirms the event-trigger storage architecture.
+- **04_dynamodb_data.png**: Proves end-to-end execution and data persistence.
+- **05_cloudwatch_logs.png**: Proof of successful execution and audit logs.
+- **06_codepipeline_success.png**: Verification of CI/CD pipeline automation.

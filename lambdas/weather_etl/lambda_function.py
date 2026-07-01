@@ -1,6 +1,7 @@
 import json
 import boto3
 from datetime import datetime
+import time # Added this library to safely handle timestamps
 
 s3_client = boto3.client('s3')
 dynamodb = boto3.resource('dynamodb')
@@ -19,7 +20,6 @@ def lambda_handler(event, context):
         
     table = dynamodb.Table(TABLE_NAME)
     
-    # Open-Meteo places real-time metrics inside 'current_weather'
     current = data.get('current_weather', {})
     
     if not current.get('temperature') and not current.get('windspeed'):
@@ -27,11 +27,12 @@ def lambda_handler(event, context):
         return {'statusCode': 200, 'body': 'No valid weather metrics found.'}
         
     try:
-        # Create a unique reading ID using the timestamp
-        reading_id = f"wx-{int(current.get('time', datetime.utcnow().timestamp()))}"
+        # BUG FIX: Open-Meteo returns time as a text string (e.g., "2026-07-01T12:00").
+        # Instead of parsing their string, we will use Python's safe time.time() 
+        # to generate a unique mathematical ID that DynamoDB will accept.
+        reading_id = f"wx-{int(time.time())}"
         wind_speed = float(current.get('windspeed', 0))
         
-        # Business logic: flag high-wind safety alerts
         status = "ADVISORY" if wind_speed > 15.0 else "NORMAL"
         
         clean_item = {

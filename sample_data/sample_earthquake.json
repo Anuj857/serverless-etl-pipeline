@@ -1,89 +1,501 @@
 {
     "type": "FeatureCollection",
     "metadata": {
-        "generated": 1697040000000,
+        "generated": 1782893960000,
         "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson",
         "title": "USGS All Earthquakes, Past Hour",
         "status": 200,
-        "api": "1.10.3",
-        "count": 4
+        "api": "2.4.0",
+        "count": 12
     },
     "features": [
         {
             "type": "Feature",
             "properties": {
-                "mag": 5.2,
-                "place": "15 km SW of Jaipur, India",
-                "time": 1697039500000,
-                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us12345",
-                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us12345.geojson",
-                "status": "reviewed",
-                "tsunami": 0,
-                "sig": 450,
-                "net": "us",
-                "code": "12345",
-                "ids": ",us12345,",
-                "sources": ",us,",
-                "types": ",origin,phase-data,",
-                "nst": 45,
-                "dmin": 0.5,
-                "rms": 0.8,
-                "gap": 65,
-                "magType": "mww",
-                "type": "earthquake",
-                "title": "M 5.2 - 15 km SW of Jaipur, India"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    75.7873,
-                    26.9124,
-                    10.5
-                ]
-            },
-            "id": "us12345"
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "mag": 2.1,
-                "place": "12 km N of San Francisco, California",
-                "time": 1697038000000,
-                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc739485",
+                "mag": 0.54,
+                "place": "8 km NW of The Geysers, CA",
+                "time": 1782893397420,
+                "updated": 1782893495988,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc75387396",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/nc75387396.geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
                 "status": "automatic",
                 "tsunami": 0,
-                "sig": 68,
+                "sig": 4,
                 "net": "nc",
-                "code": "739485",
+                "code": "75387396",
+                "ids": ",nc75387396,",
+                "sources": ",nc,",
+                "types": ",nearby-cities,origin,phase-data,",
+                "nst": 9,
+                "dmin": 0.009737,
+                "rms": 0.02,
+                "gap": 127,
                 "magType": "md",
                 "type": "earthquake",
-                "title": "M 2.1 - 12 km N of San Francisco, California"
+                "title": "M 0.5 - 8 km NW of The Geysers, CA"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -122.4194,
-                    37.7749,
-                    5.2
+                    -122.818832397461,
+                    38.8303337097168,
+                    1.99000000953674
                 ]
             },
-            "id": "nc739485"
+            "id": "nc75387396"
         },
         {
             "type": "Feature",
             "properties": {
-                "mag": null,
-                "place": "Unknown location",
-                "time": 1697037000000,
-                "status": "reviewed",
+                "mag": 1.76,
+                "place": "6 km NW of The Geysers, CA",
+                "time": 1782892858500,
+                "updated": 1782893069730,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc75387391",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/nc75387391.geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
+                "status": "automatic",
+                "tsunami": 0,
+                "sig": 48,
+                "net": "nc",
+                "code": "75387391",
+                "ids": ",nc75387391,",
+                "sources": ",nc,",
+                "types": ",focal-mechanism,nearby-cities,origin,phase-data,",
+                "nst": 33,
+                "dmin": 0.008825,
+                "rms": 0.03,
+                "gap": 41,
+                "magType": "md",
                 "type": "earthquake",
-                "title": "Unknown magnitude earthquake"
+                "title": "M 1.8 - 6 km NW of The Geysers, CA"
             },
             "geometry": {
                 "type": "Point",
-                "coordinates": [0, 0, 0]
+                "coordinates": [
+                    -122.805000305176,
+                    38.8125,
+                    1.96000003814697
+                ]
             },
-            "id": "unknown123"
+            "id": "nc75387391"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 1.7,
+                "place": "65 km WNW of Ninilchik, Alaska",
+                "time": 1782892780497,
+                "updated": 1782893043170,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/aka2026mwxytw",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/aka2026mwxytw.geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
+                "status": "automatic",
+                "tsunami": 0,
+                "sig": 44,
+                "net": "ak",
+                "code": "a2026mwxytw",
+                "ids": ",aka2026mwxytw,",
+                "sources": ",ak,",
+                "types": ",origin,phase-data,",
+                "nst": 46,
+                "dmin": 0.2,
+                "rms": 0.6,
+                "gap": 94,
+                "magType": "ml",
+                "type": "earthquake",
+                "title": "M 1.7 - 65 km WNW of Ninilchik, Alaska"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -152.785,
+                    60.23,
+                    119.7
+                ]
+            },
+            "id": "aka2026mwxytw"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 0.8,
+                "place": "7 km NW of The Geysers, CA",
+                "time": 1782892087350,
+                "updated": 1782892185976,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc75387381",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/nc75387381.geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
+                "status": "automatic",
+                "tsunami": 0,
+                "sig": 10,
+                "net": "nc",
+                "code": "75387381",
+                "ids": ",nc75387381,",
+                "sources": ",nc,",
+                "types": ",nearby-cities,origin,phase-data,",
+                "nst": 7,
+                "dmin": 0.003586,
+                "rms": 0.02,
+                "gap": 100,
+                "magType": "md",
+                "type": "earthquake",
+                "title": "M 0.8 - 7 km NW of The Geysers, CA"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.80549621582,
+                    38.8236656188965,
+                    2.19000005722046
+                ]
+            },
+            "id": "nc75387381"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 1.35,
+                "place": "17 km ESE of Little Lake, CA",
+                "time": 1782891946230,
+                "updated": 1782892155100,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ci41284599",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/ci41284599.geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
+                "status": "automatic",
+                "tsunami": 0,
+                "sig": 28,
+                "net": "ci",
+                "code": "41284599",
+                "ids": ",ci41284599,",
+                "sources": ",ci,",
+                "types": ",nearby-cities,origin,phase-data,scitech-link,",
+                "nst": 31,
+                "dmin": 0.07861,
+                "rms": 0.14,
+                "gap": 38,
+                "magType": "ml",
+                "type": "earthquake",
+                "title": "M 1.4 - 17 km ESE of Little Lake, CA"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.722333333333,
+                    35.8951666666667,
+                    7.41
+                ]
+            },
+            "id": "ci41284599"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 0.23,
+                "place": "3 km ENE of Borrego Springs, CA",
+                "time": 1782891823870,
+                "updated": 1782892033695,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ci41284591",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/ci41284591.geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
+                "status": "automatic",
+                "tsunami": 0,
+                "sig": 1,
+                "net": "ci",
+                "code": "41284591",
+                "ids": ",ci41284591,",
+                "sources": ",ci,",
+                "types": ",nearby-cities,origin,phase-data,",
+                "nst": 17,
+                "dmin": 0.05993,
+                "rms": 0.26,
+                "gap": 179,
+                "magType": "ml",
+                "type": "earthquake",
+                "title": "M 0.2 - 3 km ENE of Borrego Springs, CA"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.346166666667,
+                    33.2608333333333,
+                    7.42
+                ]
+            },
+            "id": "ci41284591"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 1.13,
+                "place": "5 km NNW of The Geysers, CA",
+                "time": 1782891770300,
+                "updated": 1782891866004,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc75387371",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/nc75387371.geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
+                "status": "automatic",
+                "tsunami": 0,
+                "sig": 20,
+                "net": "nc",
+                "code": "75387371",
+                "ids": ",nc75387371,",
+                "sources": ",nc,",
+                "types": ",nearby-cities,origin,phase-data,",
+                "nst": 19,
+                "dmin": 0.007236,
+                "rms": 0.06,
+                "gap": 45,
+                "magType": "md",
+                "type": "earthquake",
+                "title": "M 1.1 - 5 km NNW of The Geysers, CA"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.789169311523,
+                    38.8161659240723,
+                    1.16999995708466
+                ]
+            },
+            "id": "nc75387371"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 1.9,
+                "place": "55 km S of Whites City, New Mexico",
+                "time": 1782891743624,
+                "updated": 1782893506071,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/tx2026muvttn",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/tx2026muvttn.geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
+                "status": "reviewed",
+                "tsunami": 0,
+                "sig": 56,
+                "net": "tx",
+                "code": "2026muvttn",
+                "ids": ",tx2026muvttn,",
+                "sources": ",tx,",
+                "types": ",origin,phase-data,",
+                "nst": 36,
+                "dmin": 0,
+                "rms": 0.2,
+                "gap": 86,
+                "magType": "ml",
+                "type": "earthquake",
+                "title": "M 1.9 - 55 km S of Whites City, New Mexico"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.407,
+                    31.674,
+                    6.0999
+                ]
+            },
+            "id": "tx2026muvttn"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 1.52,
+                "place": "19 km SW of Moapa Town, Nevada",
+                "time": 1782891743411,
+                "updated": 1782891964984,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nn00920981",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/nn00920981.geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
+                "status": "automatic",
+                "tsunami": 0,
+                "sig": 36,
+                "net": "nn",
+                "code": "00920981",
+                "ids": ",nn00920981,",
+                "sources": ",nn,",
+                "types": ",origin,phase-data,",
+                "nst": 8,
+                "dmin": 0.981,
+                "rms": 0.2459,
+                "gap": 349,
+                "magType": "ml",
+                "type": "earthquake",
+                "title": "M 1.5 - 19 km SW of Moapa Town, Nevada"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -114.7765,
+                    36.5786,
+                    3.1159
+                ]
+            },
+            "id": "nn00920981"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 0.76,
+                "place": "8 km NW of The Geysers, CA",
+                "time": 1782891319160,
+                "updated": 1782891415899,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc75387366",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/nc75387366.geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
+                "status": "automatic",
+                "tsunami": 0,
+                "sig": 9,
+                "net": "nc",
+                "code": "75387366",
+                "ids": ",nc75387366,",
+                "sources": ",nc,",
+                "types": ",nearby-cities,origin,phase-data,",
+                "nst": 8,
+                "dmin": 0.007429,
+                "rms": 0.01,
+                "gap": 195,
+                "magType": "md",
+                "type": "earthquake",
+                "title": "M 0.8 - 8 km NW of The Geysers, CA"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.816329956055,
+                    38.8289985656738,
+                    1.87000000476837
+                ]
+            },
+            "id": "nc75387366"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 2.4,
+                "place": "60 km NNE of Kobuk, Alaska",
+                "time": 1782890932750,
+                "updated": 1782892706350,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/aka2026mwwycq",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/aka2026mwwycq.geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
+                "status": "automatic",
+                "tsunami": 0,
+                "sig": 89,
+                "net": "ak",
+                "code": "a2026mwwycq",
+                "ids": ",aka2026mwwycq,",
+                "sources": ",ak,",
+                "types": ",origin,phase-data,",
+                "nst": 26,
+                "dmin": 0.4,
+                "rms": 0.9,
+                "gap": 96,
+                "magType": "ml",
+                "type": "earthquake",
+                "title": "M 2.4 - 60 km NNE of Kobuk, Alaska"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -156.301,
+                    67.4,
+                    5
+                ]
+            },
+            "id": "aka2026mwwycq"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 2.03,
+                "place": "13 km ENE of P\u0101hala, Hawaii",
+                "time": 1782890774140,
+                "updated": 1782890983380,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74994397",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/hv74994397.geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
+                "status": "automatic",
+                "tsunami": 0,
+                "sig": 63,
+                "net": "hv",
+                "code": "74994397",
+                "ids": ",hv74994397,",
+                "sources": ",hv,",
+                "types": ",origin,phase-data,",
+                "nst": 31,
+                "dmin": 0.03781,
+                "rms": 0.159999996,
+                "gap": 147,
+                "magType": "md",
+                "type": "earthquake",
+                "title": "M 2.0 - 13 km ENE of P\u0101hala, Hawaii"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -155.367660522461,
+                    19.2628326416016,
+                    33.4300003051758
+                ]
+            },
+            "id": "hv74994397"
         }
+    ],
+    "bbox": [
+        -156.301,
+        19.262832641602,
+        1.1699999570847,
+        -104.407,
+        67.4,
+        119.7
     ]
 }

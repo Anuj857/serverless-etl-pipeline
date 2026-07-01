@@ -1,0 +1,19 @@
+{
+    "LambdaFunctionConfigurations": [
+        {
+            "LambdaFunctionArn": "arn:aws:lambda:ap-south-1:737695751113:function:EarthquakeETL",
+            "Events": ["s3:ObjectCreated:*"],
+            "Filter": { "Key": { "FilterRules": [{"Name": "prefix", "Value": "raw/earthquakes/"}, {"Name": "suffix", "Value": ".json"}] } }
+        },
+        {
+            "LambdaFunctionArn": "arn:aws:lambda:ap-south-1:737695751113:function:WeatherETL",
+            "Events": ["s3:ObjectCreated:*"],
+            "Filter": { "Key": { "FilterRules": [{"Name": "prefix", "Value": "raw/weather/"}, {"Name": "suffix", "Value": ".json"}] } }
+        },
+        {
+            "LambdaFunctionArn": "arn:aws:lambda:ap-south-1:737695751113:function:ProductETL",
+            "Events": ["s3:ObjectCreated:*"],
+            "Filter": { "Key": { "FilterRules": [{"Name": "prefix", "Value": "raw/products/"}, {"Name": "suffix", "Value": ".json"}] } }
+        }
+    ]
+}
