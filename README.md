@@ -157,37 +157,37 @@ Deployment Validation
 
 ## 📦 Amazon S3 Bucket
 
-![](docs/s3.png)
+![](docs/03_s3_bucket.png.png)
 
 ---
 
 ## ⚡ AWS Lambda Functions
 
-![](docs/lambda.png)
+![](docs/01_lambda_functions.png)
 
 ---
 
 ## 🗄 DynamoDB Tables
 
-![](docs/dynamodb.png)
+![](docs/02_dynamodb_tables.png.png)
 
 ---
 
 ## 📊 CloudWatch Logs
 
-![](docs/cloudwatch.png)
+![](docs/05_cloudwatch_logs.png)
 
 ---
 
 ## 🚀 AWS CodePipeline
 
-![](docs/codepipeline.png)
+![](docs/06_codepipeline_success.png)
 
 ---
 
 ## ✅ GitHub Actions
 
-![](docs/github-actions.png)
+![](docs/07_github_actions.png)
 
 ---
 
