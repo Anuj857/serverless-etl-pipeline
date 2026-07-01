@@ -1,42 +1,265 @@
-# Serverless Event-Driven ETL Pipeline 🚀
+# 🚀 Serverless Event-Driven ETL Pipeline on AWS
 
-## Project Overview
-This project is a fully automated, serverless Data Engineering pipeline built on AWS. It extracts JSON data from three different public APIs (Earthquakes, Weather, and E-commerce Products), routes them through an S3 event-driven architecture, transforms the data using AWS Lambda, and loads the cleaned records into Amazon DynamoDB.
+<p align="center">
+  <img src="docs/architecture.png" alt="Architecture Diagram" width="100%">
+</p>
 
-Additionally, the project features a fully configured CI/CD pipeline using GitHub Actions and AWS CodePipeline to ensure continuous integration and syntax validation upon every push to the `main` branch.
+<p align="center">
 
-## Architecture & Workflow
-1. **Extract (Mock/Fetch):** Data is sourced from the USGS Earthquake API, Open-Meteo API, and DummyJSON Products API.
-2. **Trigger:** Raw `.json` files are uploaded to specific prefix folders in an Amazon S3 bucket (`raw/earthquakes/`, `raw/weather/`, `raw/products/`).
-3. **Transform (AWS Lambda):** S3 ObjectCreated events automatically trigger specific Python Lambda functions based on the folder prefix.
-4. **Load (Amazon DynamoDB):** The Lambdas clean the data, apply business logic, and insert the formatted items into highly scalable NoSQL DynamoDB tables.
-5. **CI/CD:** AWS CodePipeline listens to the GitHub repository. On every commit, AWS CodeBuild executes a `buildspec.yml` file to validate all Python syntax before deployment.
+![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)
+![AWS Lambda](https://img.shields.io/badge/AWS-Lambda-FF9900?logo=awslambda)
+![Amazon S3](https://img.shields.io/badge/Amazon-S3-569A31?logo=amazons3)
+![Amazon DynamoDB](https://img.shields.io/badge/AWS-DynamoDB-4053D6?logo=amazondynamodb)
+![GitHub Actions](https://img.shields.io/badge/CI-GitHub_Actions-2088FF?logo=githubactions)
+![AWS CodePipeline](https://img.shields.io/badge/CD-CodePipeline-FF4F8B)
+
+</p>
+
+## 📖 Overview
+
+This project demonstrates a **production-style Serverless Event-Driven ETL Pipeline** built entirely on AWS.
+
+The pipeline extracts data from multiple public APIs, uploads raw JSON files into **Amazon S3**, automatically triggers **AWS Lambda** for transformation and validation, and stores the cleaned records in **Amazon DynamoDB**.
+
+The entire project is integrated with **GitHub Actions** and **AWS CodePipeline** to automatically validate code changes and support continuous integration.
 
 ---
 
-## Reflection Questions
+# ✨ Features
 
-**1. Why use DynamoDB for this project instead of a relational database like RDS?**
-DynamoDB was chosen because it is a fully managed, serverless NoSQL database that natively handles JSON document structures. Since the APIs (especially USGS GeoJSON) return highly nested and sometimes unpredictable schemas, a NoSQL structure allows for flexible schema-on-read. Additionally, DynamoDB's `PAY_PER_REQUEST` billing mode is incredibly cost-effective for an event-driven architecture with sporadic workloads, as there are no idle server costs.
+- Fully Serverless Architecture
+- Event-Driven ETL Pipeline
+- Multiple Data Sources
+- Automatic S3 Event Trigger
+- Data Cleaning & Validation
+- DynamoDB Storage
+- CloudWatch Monitoring
+- GitHub Actions CI
+- AWS CodePipeline
+- AWS CodeBuild Validation
+- Production-ready Folder Structure
 
-**2. What are the Partition Keys for your tables and why?**
-* **EarthquakeTable:** `event_id` (A unique string provided by the USGS API for every seismic event).
-* **WeatherTable:** `reading_id` (A custom composite key generated using the prefix `wx-` combined with the Unix timestamp of the reading, ensuring every weather fetch is uniquely stored).
-* **ProductTable:** `product_id` (The unique integer ID provided by the DummyJSON catalog).
-These keys were chosen because they provide high cardinality, ensuring data is evenly distributed across DynamoDB's underlying storage partitions, preventing hot partitions.
+---
 
-**3. What specific transformation rules did your Lambda functions apply?**
-* **Data Cleansing (Earthquake):** The function drops any event missing a valid magnitude or ID.
-* **Derived Fields (Earthquake):** Calculated a new field called `alert_level`, tagging the event as "CRITICAL" if the magnitude was >= 5.0, and "NORMAL" otherwise.
-* **Data Cleansing (Weather):** Rejects any JSON payload that is missing both temperature and windspeed metrics.
-* **Derived Fields (Weather):** Created a `wind_status` field, tagging the entry as an "ADVISORY" if wind speeds exceed 15.0 km/h.
-* **Transformations (Products):** Extracted the `price` and `discountPercentage`, and applied math to calculate a brand new `sale_price` derived field before pushing to the database.
+# 🏗 AWS Services Used
 
-# Project Evidence
+| Service | Purpose |
+|----------|----------|
+| Amazon S3 | Store raw JSON files |
+| AWS Lambda | Transform & Validate data |
+| Amazon DynamoDB | Store cleaned records |
+| Amazon CloudWatch | Logs & Monitoring |
+| AWS IAM | Permissions |
+| GitHub Actions | Continuous Integration |
+| AWS CodePipeline | Deployment Pipeline |
+| AWS CodeBuild | Build & Validation |
 
-- **01_lambda_functions.png**: Confirms creation of serverless compute resources.
-- **02_dynamodb_tables.png**: Confirms the storage schema and table existence.
-- **03_s3_bucket.png**: Confirms the event-trigger storage architecture.
-- **04_dynamodb_data.png**: Proves end-to-end execution and data persistence.
-- **05_cloudwatch_logs.png**: Proof of successful execution and audit logs.
-- **06_codepipeline_success.png**: Verification of CI/CD pipeline automation.
+---
+
+# 📂 Project Structure
+
+```
+serverless-etl-pipeline/
+│
+├── docs/
+│   ├── architecture.png
+│   ├── lambda.png
+│   ├── s3.png
+│   ├── dynamodb.png
+│   ├── cloudwatch.png
+│   ├── codepipeline.png
+│   └── github-actions.png
+│
+├── sample_data/
+│
+├── lambda/
+│   ├── earthquake/
+│   ├── weather/
+│   └── products/
+│
+├── .github/
+│   └── workflows/
+│
+├── fetch_data.py
+├── buildspec.yml
+├── requirements.txt
+└── README.md
+```
+
+---
+
+# 🔄 ETL Workflow
+
+```
+Public APIs
+      │
+      ▼
+Python Fetch Script
+      │
+      ▼
+Amazon S3
+      │
+      ▼
+S3 ObjectCreated Event
+      │
+      ▼
+AWS Lambda
+      │
+      ▼
+Validation & Transformation
+      │
+      ▼
+Amazon DynamoDB
+      │
+      ▼
+CloudWatch Logs
+```
+
+---
+
+# 📊 Data Sources
+
+| Dataset | API |
+|----------|-----|
+| 🌍 Earthquake | USGS API |
+| 🌦 Weather | Open-Meteo API |
+| 🛒 Products | DummyJSON API |
+
+---
+
+# 🚀 CI/CD Pipeline
+
+```
+GitHub
+     │
+     ▼
+GitHub Actions
+     │
+     ▼
+AWS CodePipeline
+     │
+     ▼
+AWS CodeBuild
+     │
+     ▼
+Deployment Validation
+```
+
+---
+
+# 📸 Project Screenshots
+
+## 🏗 Architecture
+
+![](docs/architecture.png)
+
+---
+
+## 📦 Amazon S3 Bucket
+
+![](docs/s3.png)
+
+---
+
+## ⚡ AWS Lambda Functions
+
+![](docs/lambda.png)
+
+---
+
+## 🗄 DynamoDB Tables
+
+![](docs/dynamodb.png)
+
+---
+
+## 📊 CloudWatch Logs
+
+![](docs/cloudwatch.png)
+
+---
+
+## 🚀 AWS CodePipeline
+
+![](docs/codepipeline.png)
+
+---
+
+## ✅ GitHub Actions
+
+![](docs/github-actions.png)
+
+---
+
+# ▶️ Run Locally
+
+Clone the repository
+
+```bash
+git clone https://github.com/yourusername/serverless-etl-pipeline.git
+```
+
+Move into project
+
+```bash
+cd serverless-etl-pipeline
+```
+
+Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Fetch sample data
+
+```bash
+python fetch_data.py
+```
+
+Upload generated JSON files to the configured Amazon S3 bucket to trigger the ETL pipeline.
+
+---
+
+# 📈 Future Improvements
+
+- AWS Step Functions
+- SNS Notifications
+- Dead Letter Queue (DLQ)
+- Terraform Infrastructure
+- AWS Glue Integration
+- Redshift Data Warehouse
+- Unit Testing
+- Monitoring Dashboard
+
+---
+
+# 🛠 Tech Stack
+
+- Python 3.12
+- AWS Lambda
+- Amazon S3
+- Amazon DynamoDB
+- AWS IAM
+- Amazon CloudWatch
+- GitHub Actions
+- AWS CodePipeline
+- AWS CodeBuild
+- JSON
+- Requests
+
+---
+
+# 👨‍💻 Author
+
+**Anuj Kumar Yadav**
+
+B.Tech Computer Science Engineering
+
+Data Engineering Enthusiast
+
+GitHub: https://github.com/Anuj857
+
+---
+
+## ⭐ If you found this project helpful, consider giving it a Star!
