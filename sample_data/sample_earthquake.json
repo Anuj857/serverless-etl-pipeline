@@ -1,0 +1,89 @@
+{
+    "type": "FeatureCollection",
+    "metadata": {
+        "generated": 1697040000000,
+        "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson",
+        "title": "USGS All Earthquakes, Past Hour",
+        "status": 200,
+        "api": "1.10.3",
+        "count": 4
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 5.2,
+                "place": "15 km SW of Jaipur, India",
+                "time": 1697039500000,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us12345",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us12345.geojson",
+                "status": "reviewed",
+                "tsunami": 0,
+                "sig": 450,
+                "net": "us",
+                "code": "12345",
+                "ids": ",us12345,",
+                "sources": ",us,",
+                "types": ",origin,phase-data,",
+                "nst": 45,
+                "dmin": 0.5,
+                "rms": 0.8,
+                "gap": 65,
+                "magType": "mww",
+                "type": "earthquake",
+                "title": "M 5.2 - 15 km SW of Jaipur, India"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    75.7873,
+                    26.9124,
+                    10.5
+                ]
+            },
+            "id": "us12345"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 2.1,
+                "place": "12 km N of San Francisco, California",
+                "time": 1697038000000,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc739485",
+                "status": "automatic",
+                "tsunami": 0,
+                "sig": 68,
+                "net": "nc",
+                "code": "739485",
+                "magType": "md",
+                "type": "earthquake",
+                "title": "M 2.1 - 12 km N of San Francisco, California"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.4194,
+                    37.7749,
+                    5.2
+                ]
+            },
+            "id": "nc739485"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": null,
+                "place": "Unknown location",
+                "time": 1697037000000,
+                "status": "reviewed",
+                "type": "earthquake",
+                "title": "Unknown magnitude earthquake"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [0, 0, 0]
+            },
+            "id": "unknown123"
+        }
+    ]
+}
